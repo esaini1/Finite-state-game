@@ -1,0 +1,571 @@
+<tw-storydata name="Finite State Game" startnode="43" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="B13DF512-D92A-4270-9F4F-D7DFEAC75070" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="525,200" size="100,100">Computer Virus Simulator Game
+
+Lets get started!
+[[Turn on Computer-&gt;Computer]]
+
+(set: $virusStatus to false)
+(set: $systemStrength to 100)
+</tw-passagedata><tw-passagedata pid="2" name="Computer" tags="" position="525,350" size="100,100">My PC
+
+[[Open Anti-Virus Software-&gt;Anti-Virus]]
+[[Open Email-&gt;Email]]
+[[Open Facebook-&gt;Facebook]]
+[[Open Netflix-&gt;Netflix]]
+</tw-passagedata><tw-passagedata pid="3" name="Email" tags="" position="525,500" size="100,100">My Inbox:
+
+[[American Airlines - Check In For Tomorrow&#39;s Flight!-&gt;American Airlines]]
+[[David Green - Good Luck Tommorrow!-&gt;David]]
+[[FREE ICECREAM!-&gt;Virus Start]]</tw-passagedata><tw-passagedata pid="4" name="Facebook" tags="" position="375,500" size="100,100">Facebook!
+
+---
+Message from David Green sent June 9, 2022 at 9:23pm:
+---
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job in New York! 
+
+btw I forwarded an email with a coupon for Free Icecream in New York. Check your email lol ! :)
+---
+[[go to inbox-&gt;Email]]
+---
+
+</tw-passagedata><tw-passagedata pid="5" name="Netflix" tags="" position="250,500" size="100,100">Uh oh. Look like you forgot to pay your Netflix subscription.
+
+[[go back-&gt;Computer]]
+</tw-passagedata><tw-passagedata pid="6" name="American Airlines" tags="" position="400,725" size="100,100">---
+From: americanairlines@inbox.com
+Sent: Wednesday, June 9, 2022 11:30:12 PM
+Subject: Check In For Tomorrow&#39;s Flight!
+
+
+&#39;&#39;FLIGHT DETAILS:&#39;&#39;
+Thursday, June 10 (text-colour:green)[ON TIME!]
+Indianapolis, IN (IND) ----&gt; New York (JFK)
+11:30 AM                     
+Terminal: B                     
+Gate: 41B
+---
+
+[[back to inbox-&gt;Email]]
+</tw-passagedata><tw-passagedata pid="7" name="Virus Start" tags="" position="650,725" size="100,100">UH OH. LOOK LIKE I GOT A VIRUS! :(
+
+---
+(bg:red)[ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR]
+---
+
+
+[[OPEN Anti-Virus Software-&gt;Anti-Virus]]
+
+(set: $virusStatus to true)
+(set: $systemStrength to 50)</tw-passagedata><tw-passagedata pid="8" name="David" tags="" position="525,725" size="100,100">
+
+---
+From: davidgreen@inbox.com
+Sent: Wednesday, June 9, 2022 10:50:26 PM
+Subject: Good Luck Tomorrow!
+
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job in New York! 
+
+btw I forwarded an email I got about free icecream. Check it out!
+
+-David
+---
+
+[[back to inbox-&gt;Email]]
+
+</tw-passagedata><tw-passagedata pid="9" name="Anti-Virus" tags="" position="675,500" size="100,100">Anti-virus software!
+---
+Computer Status: (if:$virusStatus is true)[(text-colour:red)[Virus Detected. Please Run Anti-Virus!]](if:$virusStatus is false)[(text-colour:green)[No Virus Detected. System Strength: $systemStrength%.]]
+---
+
+(if:$virusStatus is false)[[[go back-&gt;Computer]]]
+(if:$virusStatus is true)[[[Run Anti-Virus-&gt;Run Anti-Virus]]]</tw-passagedata><tw-passagedata pid="10" name="Run Anti-Virus" tags="" position="825,500" size="100,100">The following are running proccesses on this PC. Please delete all processes which seem suspicious. But becareful, if you delete vital proccess, you may destory the computer. If system strength reaches 0%, the computer has been destroyed. If it reaches 100%, the virus has been deleted.
+
+&#39;&#39;CURRENT System Strength: $systemStrength%.&#39;&#39;
+
+All Running Processes:
+
+(if:(history: where its name contains &quot;Delete Minecraft.exe&quot;)&#39;s length is 0)[[Delete Minecraft.exe]]
+[[Delete FreeIceCream.exe]]
+[[Delete Anti-Virus.exe]]
+[[Delete gjsddf.exe]]
+[[Delete Firewall.exe]]
+[[Delete trojan.exe]] 
+[[Delete iTunes.exe]] 
+[[Delete MicrosoftDefender.exe]]
+[[Delete CodeResources.exe]]
+[[Delete trp453-DON&#39;T-DELETE.exe]]
+
+
+</tw-passagedata><tw-passagedata pid="11" name="Delete gjsddf.exe" tags="" position="975,200" size="100,100">(set: $systemStrength to $systemStrength + 30)
+
+Awesome! gjsddf.exe was a virus that would have allowed attackers to gain access to your webcam. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="12" name="Delete Minecraft.exe" tags="" position="875,200" size="100,100">(set: $systemStrength to $systemStrength + 0)
+
+Minecraft was neither a virus or vital computer process. Just a video game. 
+
+Current system strength remains at $systemStrength%.
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="13" name="Delete FreeIceCream.exe" tags="" position="1075,300" size="100,100">(set: $systemStrength to $systemStrength + 40)
+----
+You&#39;ve deleted (text-colour:red)[FreeIceCream.exe]
+----
+Awesome! It was a virus which would have bombarded your computer with spam. Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="14" name="Delete Anti-Virus.exe" tags="" position="1075,700" size="100,100">(set: $systemStrength to 0)
+
+NOOO! You&#39;ve just deleted the Anti-Virus software! The virus now has free reign and your computer is destroyed. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.].
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="15" name="Delete Firewall.exe" tags="" position="1075,500" size="100,100">(set: $systemStrength to 0)
+
+UH OH you deleted the firewall! The virus now has free reign to send incoming network packets which will destory your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]. 
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="16" name="Delete trojan.exe" tags="" position="1075,200" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+Oops!!! trojan.exe was accually an important anti-virus system which scanned for trojan-horse applications on your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="17" name="Delete iTunes.exe" tags="" position="1075,400" size="100,100">(set: $systemStrength to $systemStrength + 0)
+
+iTunes was not a virus or vital computer process. Just a terrible music service that Apple still develops for Windows computers for some reason LOL. So great job removing it but it doesnt change the strength of your system.
+
+Current system strength remains at $systemStrength%.
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="18" name="Delete NotAtAllSuspiousApp.exe" tags="" position="1075,600" size="100,100">(set: $systemStrength to $systemStrength + 30)
+
+Awesome! NotAtAllSuspiousApp.exe was a virus which would have allowed attackers to gain remote access to your computer. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!</tw-passagedata><tw-passagedata pid="19" name="Delete MicrosoftDefender.exe" tags="" position="975,800" size="100,100">(set: $systemStrength to $systemStrength - 30)
+
+Oops!!! Microsoft Defender was accually a VERY important anti-malware component of Microsoft Windows. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="20" name="Delete CodeResources.exe" tags="" position="1075,800" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+
+Oops!!! CodeReouces.exe was accually a file the computer needed to protect itself. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="21" name="Delete trp453-DON&#39;T-DELETE.exe" tags="" position="875,800" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+Oops you probabily should have listened to the file name!!! trp453-DON&#39;T-DELETE.exe contained an important cybersecuity process. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="22" name="Introduction" tags="" position="525,200" size="100,100">Computer Virus Simulator Game
+
+Lets get started!
+[[Turn on Computer-&gt;Computer]]
+
+(set: $virusStatus to false)
+(set: $systemStrength to 100)
+</tw-passagedata><tw-passagedata pid="23" name="Computer" tags="" position="525,350" size="100,100">My PC
+
+[[Open Anti-Virus Software-&gt;Anti-Virus]]
+[[Open Email-&gt;Email]]
+[[Open Facebook-&gt;Facebook]]
+[[Open Netflix-&gt;Netflix]]
+</tw-passagedata><tw-passagedata pid="24" name="Email" tags="" position="525,500" size="100,100">My Inbox:
+
+[[American Airlines - Check In For Tomorrow&#39;s Flight!-&gt;American Airlines]]
+[[David Green - Good Luck Tommorrow!-&gt;David]]
+[[FREE ICECREAM!-&gt;Virus Start]]</tw-passagedata><tw-passagedata pid="25" name="Facebook" tags="" position="375,500" size="100,100">Facebook!
+
+---
+Message from David Green sent June 9, 2022 at 9:23pm:
+---
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job in New York! 
+
+btw I forwarded an email with a coupon for Free Icecream in New York. Check your email lol ! :)
+---
+[[go to inbox-&gt;Email]]
+---
+
+</tw-passagedata><tw-passagedata pid="26" name="Netflix" tags="" position="250,500" size="100,100">Uh oh. Look like you forgot to pay your Netflix subscription.
+
+[[go back-&gt;Computer]]
+</tw-passagedata><tw-passagedata pid="27" name="American Airlines" tags="" position="400,725" size="100,100">---
+From: americanairlines@inbox.com
+Sent: Wednesday, June 9, 2022 11:30:12 PM
+Subject: Check In For Tomorrow&#39;s Flight!
+
+
+&#39;&#39;FLIGHT DETAILS:&#39;&#39;
+Thursday, June 10 (text-colour:green)[ON TIME!]
+Indianapolis, IN (IND) ----&gt; New York (JFK)
+11:30 AM                     
+Terminal: B                     
+Gate: 41B
+---
+
+[[back to inbox-&gt;Email]]
+</tw-passagedata><tw-passagedata pid="28" name="Virus Start" tags="" position="650,725" size="100,100">UH OH. LOOK LIKE I GOT A VIRUS! :(
+
+---
+(bg:red)[ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR]
+---
+
+
+[[OPEN Anti-Virus Software-&gt;Anti-Virus]]
+
+(set: $virusStatus to true)
+(set: $systemStrength to 50)</tw-passagedata><tw-passagedata pid="29" name="David" tags="" position="525,725" size="100,100">
+
+---
+From: davidgreen@inbox.com
+Sent: Wednesday, June 9, 2022 10:50:26 PM
+Subject: Good Luck Tomorrow!
+
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job in New York! 
+
+btw I forwarded an email I got about free icecream. Check it out!
+
+-David
+---
+
+[[back to inbox-&gt;Email]]
+
+</tw-passagedata><tw-passagedata pid="30" name="Anti-Virus" tags="" position="675,500" size="100,100">Anti-virus software!
+---
+Computer Status: (if:$virusStatus is true)[(text-colour:red)[Virus Detected. Please Run Anti-Virus!]](if:$virusStatus is false)[(text-colour:green)[No Virus Detected. System Strength: $systemStrength%.]]
+---
+
+(if:$virusStatus is false)[[[go back-&gt;Computer]]]
+(if:$virusStatus is true)[[[Run Anti-Virus-&gt;Run Anti-Virus]]]</tw-passagedata><tw-passagedata pid="31" name="Run Anti-Virus" tags="" position="825,500" size="100,100">The following are running proccesses on this PC. Please delete all processes which seem suspicious. But becareful, if you delete vital proccess, you may destory the computer. If system strength reaches 0%, the computer has been destroyed. If it reaches 100%, the virus has been deleted.
+
+&#39;&#39;CURRENT System Strength: $systemStrength%.&#39;&#39;
+
+All Running Processes:
+
+
+
+[[Delete Minecraft.exe-&gt;Minecraft]]
+[[FreeIceCream-&gt;FreeIceCream]]
+[[Anti-Virus.exe-&gt;Anti-Virus]]
+[[gjsddf-&gt;Minecraft]]
+[[Firewall-&gt;Minecraft]]
+[[trojan-&gt;Minecraft]] 
+[[iTunes-&gt;Minecraft]] 
+[[MicrosoftDefender-&gt;Minecraft]]
+[[CodeResources-&gt;Minecraft]]
+[[trp453-DON&#39;T-DELETE-&gt;Minecraft]]
+
+
+</tw-passagedata><tw-passagedata pid="32" name="gjsddf" tags="" position="975,200" size="100,100">(set: $systemStrength to $systemStrength + 30)
+
+Awesome! gjsddf.exe was a virus that would have allowed attackers to gain access to your webcam. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="33" name="Minecraft" tags="" position="875,200" size="100,100">(set: $systemStrength to $systemStrength + 0)
+
+Minecraft was neither a virus or vital computer process. Just a video game. 
+
+Current system strength remains at $systemStrength%.
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="34" name="FreeIceCream" tags="" position="1075,300" size="100,100">(set: $systemStrength to $systemStrength + 40)
+----
+You&#39;ve deleted (text-colour:red)[FreeIceCream.exe]
+----
+Awesome! It was a virus which would have bombarded your computer with spam. Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="35" name="Anti-Virus.exe" tags="" position="1075,700" size="100,100">(set: $systemStrength to 0)
+
+NOOO! You&#39;ve just deleted the Anti-Virus software! The virus now has free reign and your computer is destroyed. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.].
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="36" name="Firewall" tags="" position="1075,500" size="100,100">(set: $systemStrength to 0)
+
+UH OH you deleted the firewall! The virus now has free reign to send incoming network packets which will destory your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]. 
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="37" name="trojan" tags="" position="1075,200" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+Oops!!! trojan.exe was accually an important anti-virus system which scanned for trojan-horse applications on your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="38" name="iTunes" tags="" position="1075,400" size="100,100">(set: $systemStrength to $systemStrength + 0)
+
+iTunes was not a virus or vital computer process. Just a terrible music service that Apple still develops for Windows computers for some reason LOL. So great job removing it but it doesnt change the strength of your system.
+
+Current system strength remains at $systemStrength%.
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="39" name="NotAtAllSuspiousApp" tags="" position="1075,600" size="100,100">(set: $systemStrength to $systemStrength + 30)
+
+Awesome! NotAtAllSuspiousApp.exe was a virus which would have allowed attackers to gain remote access to your computer. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!</tw-passagedata><tw-passagedata pid="40" name="MicrosoftDefender" tags="" position="975,800" size="100,100">(set: $systemStrength to $systemStrength - 30)
+
+Oops!!! Microsoft Defender was accually a VERY important anti-malware component of Microsoft Windows. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="41" name="CodeResources" tags="" position="1075,800" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+
+Oops!!! CodeReouces.exe was accually a file the computer needed to protect itself. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="42" name="trp453-DON&#39;T-DELETE" tags="" position="875,800" size="100,100">(set: $systemStrength to $systemStrength - 20)
+
+Oops you probabily should have listened to the file name!!! trp453-DON&#39;T-DELETE.exe contained an important cybersecuity process. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="43" name="Introduction" tags="" position="525,200" size="100,100">Computer Virus Simulator Game
+
+Lets get started!
+[[Turn on Computer-&gt;Computer]]
+
+(set: $virusStatus to false)
+(set: $systemStrength to 100)
+</tw-passagedata><tw-passagedata pid="44" name="Computer" tags="" position="525,350" size="100,100">My PC
+
+[[Open Anti-Virus Software-&gt;Anti-Virus]]
+[[Open Email-&gt;Email]]
+[[Open Facebook-&gt;Facebook]]
+[[Open Netflix-&gt;Netflix]]
+</tw-passagedata><tw-passagedata pid="45" name="Email" tags="" position="525,500" size="100,100">My Inbox:
+
+[[American Airlines - Check In For Tomorrow&#39;s Flight!-&gt;American Airlines]]
+[[David Green - Good Luck Tommorrow!-&gt;David]]
+[[FREE ICECREAM!-&gt;Virus Start]]</tw-passagedata><tw-passagedata pid="46" name="Facebook" tags="" position="375,500" size="100,100">Facebook
+
+Message from David Green sent June 9, 2022 at 9:23pm:
+---
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job!
+
+btw I forwarded an email with a coupon for Free Icecream!!!! Check your email lol ! :)
+---
+[[go to inbox-&gt;Email]]
+
+</tw-passagedata><tw-passagedata pid="47" name="Netflix" tags="" position="250,500" size="100,100">Uh oh. Look like you forgot to pay your Netflix subscription this month.
+
+[[go back-&gt;Computer]]
+</tw-passagedata><tw-passagedata pid="48" name="American Airlines" tags="" position="400,725" size="100,100">---
+From: americanairlines@inbox.com
+Sent: Wednesday, June 9, 2022 11:30:12 PM
+Subject: Check In For Tomorrow&#39;s Flight!
+
+
+&#39;&#39;FLIGHT DETAILS:&#39;&#39;
+Thursday, June 10 (text-colour:green)[ON TIME!]
+Indianapolis, IN (IND) ----&gt; New York (JFK)
+11:30 AM                     
+Terminal: B                     
+Gate: 41B
+---
+
+[[back to inbox-&gt;Email]]
+</tw-passagedata><tw-passagedata pid="49" name="Virus Start" tags="" position="650,725" size="100,100">---
+(bg:blue)[ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR]
+---
+
+UH OH. (text-colour:red)[LOOK LIKE I GOT A VIRUS!] I JUST WANTED FREE ICECREAM!! :(
+[[OPEN Anti-Virus Software-&gt;Anti-Virus]]
+
+(set: $virusStatus to true)
+(set: $systemStrength to 100)
+(set: $virus to 0)
+
+(set: $minecraft to true)
+(set: $gjsddf to true)
+(set: $trojan to true)
+(set: $freeIcecream to true)
+(set: $itunes to true)
+(set: $firewall to true)
+(set: $NotAtAllSuspiousApp to true)
+(set: $AntiVirus to true)
+(set: $CodeResources to true)
+(set: $MicrosoftDefender to true)
+(set: $trp453 to true)
+
+
+
+
+</tw-passagedata><tw-passagedata pid="50" name="David" tags="" position="525,725" size="100,100">
+
+---
+From: davidgreen@inbox.com
+Sent: Wednesday, June 9, 2022 10:50:26 PM
+Subject: Good Luck Tomorrow!
+
+Hey buddy! Just wanted to wish you good luck tomorrow! Hope you get the job in New York! 
+
+btw I forwarded an email I got about free icecream. Check it out!
+
+-David
+---
+
+[[back to inbox-&gt;Email]]
+
+</tw-passagedata><tw-passagedata pid="51" name="Anti-Virus" tags="" position="675,500" size="100,100">Anti-virus software:
+---
+Computer Status: (if:$virusStatus is true)[(text-colour:red)[3 Viruses Detected.]](if:$virusStatus is false)[(text-colour:green)[No Virus Detected.]]
+---
+
+(if:$virusStatus is false)[[[go back-&gt;Computer]]]
+(if:$virusStatus is true)[[[Run Anti-Virus-&gt;Run Anti-Virus]]]</tw-passagedata><tw-passagedata pid="52" name="Run Anti-Virus" tags="" position="825,500" size="100,100">(if:$systemStrength &gt; 0 and $virus &lt; 3)[The following are running proccesses on this PC. Please delete all processes which seem suspicious. But be careful, if you delete an important proccess, system strength will decrease. If system strength falls to 0%, the computer has been destroyed.]
+(if:$virus &gt; 2)[The virus has been sucsessfully removed! You Win! [[shut down computer and start over-&gt;Introduction]].]
+(if:$systemStrength &lt; 1)[The virus has DESTORYED YOUR COMPUTER! [[TRY AGAIN-&gt;Virus Start]].]
+&#39;&#39;CURRENT SYSTEM STRENGTH: &#39;&#39;[(text-colour:cyan)[&#39;&#39; $systemStrength%.&#39;&#39;]]
+&#39;&#39;VIRUSES DELETED: &#39;&#39;[(text-colour:cyan)[&#39;&#39; $virus out of 3.&#39;&#39;]]
+
+(if:$systemStrength &gt; 0 and $virus &lt; 3)[&#39;&#39;All Running Processes:&#39;&#39;]
+---
+(if:$minecraft is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete Minecraft.exe]]
+(if:$freeIcecream is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete FreeIceCream.exe]]
+(if:$AntiVirus is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete Anti-Virus.exe]]
+(if:$gjsddf is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete gjsddf.exe]]
+(if:$firewall is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete Firewall.exe]]
+(if:$trojan is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete trojan.exe]] 
+(if:$itunes is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete iTunes.exe]] 
+(if:$MicrosoftDefender is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete MicrosoftDefender.exe]]
+(if:$CodeResources is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete CodeResources.exe]]
+(if:$NotAtAllSuspiousApp is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete NotAtAllSuspiousApp.exe]]
+(if:$trp453 is true)+(if:$systemStrength &gt; 0 and $virus &lt; 3)[[Delete trp453-DON&#39;T-DELETE.exe]]
+---</tw-passagedata><tw-passagedata pid="53" name="Delete gjsddf.exe" tags="" position="975,200" size="100,100">(set: $systemStrength to $systemStrength + 30)
+(set: $virus to $virus + 1)
+(set: $gjsddf to false)
+
+---
+(text-colour:GREEN)[VIRUS $virus out of 3 DELETED!]
+---
+
+Awesome! gjsddf.exe was a virus that would have allowed attackers to gain access to your webcam. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="54" name="Delete Minecraft.exe" tags="" position="875,200" size="100,100">(set: $systemStrength to $systemStrength + 0)
+(set: $minecraft to false)
+
+---
+(text-colour:ORANGE)[NOT A VIRUS!]
+---
+
+Minecraft was neither a virus or vital computer process. Just a video game. 
+
+Current system strength (text-colour:orange)[remains at $systemStrength%].
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="55" name="Delete FreeIceCream.exe" tags="" position="1075,300" size="100,100">(set: $systemStrength to $systemStrength + 30)
+(set: $freeIcecream to false)
+(set: $virus to $virus + 1)
+
+----
+(text-colour:GREEN)[VIRUS $virus out of 3 DELETED!]
+----
+
+Awesome! FreeIceCream.exe was a virus which would have bombarded your computer with spam. Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="56" name="Delete Anti-Virus.exe" tags="" position="1075,700" size="100,100">(set: $systemStrength to 0)
+(set: $AntiVirus to false)
+
+---
+(text-colour:red)[(bg:navy)[&#39;&#39;FATAL ERROR: VERY IMPORTANT PROCESS WAS DELETED&#39;&#39;]]
+---
+
+NOOO! You&#39;ve just deleted the Anti-Virus software! The virus now has free reign and your computer is destroyed. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.].
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="57" name="Delete Firewall.exe" tags="" position="1075,500" size="100,100">(set: $systemStrength to 0)
+(set: $firewall to false)
+
+---
+(text-colour:red)[(bg:navy)[&#39;&#39;FATAL ERROR: VERY IMPORTANT PROCESS WAS DELETED&#39;&#39;]]
+---
+
+UH OH you deleted the firewall! The virus now has free reign to send incoming network packets which will destroy your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]. 
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="58" name="Delete trojan.exe" tags="" position="1075,200" size="100,100">(set: $systemStrength to $systemStrength - 40)
+(set: $trojan to false)
+
+---
+(text-colour:red)[ERROR: IMPORTANT PROCESS WAS DELETED!]
+---
+
+Oops!!! trojan.exe was accually an important anti-virus system which scanned for trojan-horse applications on your computer. 
+
+Current system strength has (text-colour:red)[DECREASED to $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="59" name="Delete iTunes.exe" tags="" position="1075,400" size="100,100">(set: $systemStrength to $systemStrength + 0)
+(set: $itunes to false)
+
+---
+(text-colour:ORANGE)[NOT A VIRUS!]
+---
+
+iTunes was not a virus or vital computer process. Just an outdated and awful music application that Apple still develops for Windows computers for some bizare reason. Deleting it was probably a good call!
+
+Current system strength (text-colour:orange)[remains at $systemStrength%].
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="60" name="Delete NotAtAllSuspiousApp.exe" tags="" position="1075,600" size="100,100">(set: $systemStrength to $systemStrength + 30)
+(set: $NotAtAllSuspiousApp to false)
+(set: $virus to $virus + 1)
+
+---
+(text-colour:GREEN)[VIRUS $virus out of 3 DELETED!]
+---
+
+Awesome! NotAtAllSuspiousApp.exe was a virus which would have allowed attackers to gain remote access to your computer. 
+
+Current system strength has (text-colour:GREEN)[INCREASED to $systemStrength%.] Great work!
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="61" name="Delete MicrosoftDefender.exe" tags="" position="975,800" size="100,100">(set: $systemStrength to $systemStrength - 40)
+(set: $MicrosoftDefender to false)
+
+---
+(text-colour:red)[ERROR: IMPORTANT PROCESS WAS DELETED!]
+---
+
+Oops!!! Microsoft Defender was accually a VERY important anti-malware component of Microsoft Windows. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="62" name="Delete CodeResources.exe" tags="" position="1075,800" size="100,100">(set: $systemStrength to $systemStrength - 40)
+(set: $CodeResources to false)
+
+---
+(text-colour:red)[ERROR: IMPORTANT PROCESS WAS DELETED!]
+---
+
+Oops!!! CodeResources.exe was accually a file the computer needed to protect itself. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata><tw-passagedata pid="63" name="Delete trp453-DON&#39;T-DELETE.exe" tags="" position="875,800" size="100,100">(set: $systemStrength to $systemStrength - 40)
+(set: $trp453 to false)
+
+---
+(text-colour:red)[ERROR: IMPORTANT PROCESS WAS DELETED!]
+---
+
+Oops you probabily should have listened to the file name!!! trp453-DON&#39;T-DELETE.exe contained an important cybersecuity process. 
+
+Current system strength has (text-colour:red)[DECREASED to  $systemStrength%.]
+
+[[go back-&gt;Run Anti-Virus]]</tw-passagedata></tw-storydata>
+
